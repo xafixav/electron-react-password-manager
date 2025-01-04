@@ -1,0 +1,136 @@
+.main_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: red;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+
+#root {
+  height: 80%;  /* Fill the viewport height */
+  width: 80%;
+  display: flex; /* Use flexbox to allow children to grow */
+  flex-direction: column; /* Arrange children vertically */
+}
+
+.main_password {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: red;
+}
+.main_password * {
+  margin: 1rem;
+}
+
+input {
+  width: 80%; /* Full width of container */
+  padding: 12px 16px; /* Comfortable padding */
+  margin: 8px 0; /* Spacing between inputs */
+  border: 2px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Comfortable text size */
+  font-family: 'Arial', sans-serif; /* Clean font */
+  outline: none; /* Remove default outline */
+  transition: all 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect */
+input:hover {
+  border-color: #888; /* Slightly darker border */
+}
+
+/* Focus effect */
+input:focus {
+  border-color: #007BFF; /* Highlighted border color */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Blue glow */
+}
+
+/* Placeholder text styling */
+input::placeholder {
+  color: #aaa; /* Lighter color for placeholder */
+  font-style: italic; /* Italicized placeholder text */
+}
+
+input[type="number"] {
+  text-align: center; /* Center-align the content */
+  width: 80%; /* Adjust the width as needed */
+  padding: 12px 16px; /* Comfortable padding */
+  margin: 8px 0; /* Spacing between inputs */
+  border: 2px solid #ccc; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Comfortable text size */
+  outline: none; /* Remove default outline */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+input[type="number"]:focus {
+  border-color: #007BFF; /* Highlight border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Add focus glow */
+}
+
+body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    200.96deg,
+    #fedc2a -29.09%,
+    #dd5789 51.77%,
+    #7a2c9e 129.35%
+  );
+  font-family: sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  box-shadow:
+    0px 8px 28px -6px rgba(24, 39, 75, 0.12),
+    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
