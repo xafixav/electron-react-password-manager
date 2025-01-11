@@ -18,17 +18,19 @@ const decoder = (numArr: number[]) => {
 };
 
 // this function will get arrays of unicode ranges and combine them in a single array, after that it will sort in crescent order : 0,1,2...
-const implementRules = (rules: number[][]) => {
-  const response = rules.pop();
+const implementRules = (rulesArray: number[][]) => {
+  const response = rulesArray.pop();
   if (response === undefined) {
     return [];
   }
-  rules.map((arrayElement, index) => {
-    if (index === rules.length - 1) {
+
+  rulesArray.forEach((arrayElement, index) => {
+    if (index === rulesArray.length - 1) {
       return;
     }
-    return arrayElement.forEach((num) => response.push(num));
+    arrayElement.forEach((num) => response.push(num));
   });
+
   return response.sort((a, b) => {
     return a - b;
   });
@@ -36,15 +38,15 @@ const implementRules = (rules: number[][]) => {
 
 export const generateRandomText = (
   passwordSize: number,
-  ...rules: number[][]
+  ...rulesArray: number[][]
 ) => {
-  const rulesUnicodes = implementRules(rules);
+  const rulesUnicodes = implementRules(rulesArray);
   const max = rulesUnicodes[rulesUnicodes.length - 1];
   const min = rulesUnicodes[0];
   const arrayOfUnicodes: number[] = [];
 
   // this "for" will populate arrayOfUnicodes by the exaclty amount of passwordSize
-  for (let i = passwordSize; i > 0; i--) {
+  for (let i = passwordSize; i > 0; i -= 1) {
     // generate a random number between max and min and push t to arrayOfUnicodes
     arrayOfUnicodes.push(Math.floor(Math.random() * (max - min + 1)) + min);
   }
